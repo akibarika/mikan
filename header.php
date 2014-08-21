@@ -11,8 +11,9 @@
     <meta name="keywords" content="">
     <meta name="author" content="Rika Akiba">
     <!-- style file -->
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/styles/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/styles/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/styles/normalize.min.css">
     <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/styles/styles.less" />
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <!-- my less files-->
@@ -29,7 +30,7 @@
         <header>
             <div class="container">
                 <div class="wrap-title">
-                    <a href="<?php home_url(); ?>" target="_blank">MIKAN</a>
+                    <a href="<?php $url = home_url('/'); echo $url; ?>">MIKAN</a>
                     <a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><span class="icon-feed"></span></a>
                 </div>
                 <nav>
