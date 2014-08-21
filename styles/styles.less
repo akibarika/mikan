@@ -23,7 +23,7 @@ body {
   font-size:1em;
   position:relative;
   font-family:"Lato", "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei",sans-serif;
-  color:#111;
+  color:#424242;
   z-index:0;
   overflow-x:hidden;
   background-color:#fff;
@@ -83,6 +83,7 @@ input,textarea {
   transition:@val @time @pro;
 }
 @mian-color: #f97f46;
+@second-color: #f9503b;
 
 @font-face {
 	font-family: 'icomoon';
@@ -145,7 +146,7 @@ input,textarea {
             margin: 0 10px;
           }
           &:hover {
-            color: #f9503b;
+            color: @second-color;
           }
           & > span {
             font-size: 30px;
@@ -187,7 +188,7 @@ input,textarea {
         margin-top: 40px;
         padding-top: 35px;
         .post-item {
-          border-bottom: 1px dotted #f9503b;
+          border-bottom: 1px dotted @second-color;
           margin: 0;
           position: relative;
           a {
@@ -223,6 +224,28 @@ input,textarea {
           padding: 0 0 50px;
           text-align: center;
           text-transform: uppercase;
+          & > h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin: 15px 0;
+          }
+          & > .post-date {
+            color: #aeadad;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1;
+            margin: 25px 0 0;
+            & > a:hover {
+              color: @mian-color;
+            }
+            &::after {
+              border-bottom: 1px dotted @second-color;
+              content: "";
+              display: block;
+              margin: 40px auto 0;
+              width: 100px;
+            }
+          }
         }
       }
     }
@@ -251,7 +274,7 @@ footer {
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
         &:hover {
-          color: #f9503b;
+          color: @second-color;
         }
       }
       p.cp {
