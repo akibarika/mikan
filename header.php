@@ -30,7 +30,7 @@
         <header>
             <div class="container">
                 <div class="wrap-title">
-                    <a href="<?php $url = home_url('/'); echo $url; ?>">MIKAN</a>
+                    <a class="ajax-link" href="<?php $url = home_url('/'); echo $url; ?>">MIKAN</a>
                     <a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><span class="icon-feed"></span></a>
                 </div>
                 <nav>
