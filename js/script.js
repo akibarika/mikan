@@ -11,9 +11,9 @@ $(document).ready(function(){
     var showIndex = false;
     var $content = $('.content');
     var $postIndex = $('.post-list');
-    var $navContent = $('footer .container');
+    var $navContent = $('#footer');
     var $navList = $('.wrap-footer');
-    
+
     if ( ! History.enabled) {
         return false;
     }
@@ -25,6 +25,7 @@ $(document).ready(function(){
             currentState = _currentUrl;
         }
     });
+
     History.Adapter.bind(window, 'statechange', function() {
         var State = History.getState();
         $.ajax({
@@ -32,19 +33,15 @@ $(document).ready(function(){
         }).done(function(data){
             var $html = $(data);
             var $newContent = $('.content', $html).contents();
-
+            var $newNav = $('#footer', $html).contents();
             document.title = $html.filter('title').text();
             $('html, body').animate({'scrollTop': 0});
             $content.fadeOut(500, function() {
                 $postIndex.show();
                 $content.html($newContent);
                 $content.fadeIn(500);
-                NProgress.done();
-                loading = false;
-                showIndex = false;
             });
-            var $newNav = $('footer .container', $html).contents();
-            $navContent.fadeOut(500,function(){
+            $navContent.fadeOut(500,function() {
                 $navList.show();
                 $navContent.html($newNav);
                 $navContent.fadeIn(500);
