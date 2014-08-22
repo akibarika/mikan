@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/styles/nprogress.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/styles/normalize.min.css">
     <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/styles/styles.less" />
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <!-- my less files-->
     <script src="<?php bloginfo('template_directory'); ?>/js/less-1.7.4.min.js" type="text/javascript"></script>
 

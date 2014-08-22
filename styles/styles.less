@@ -95,6 +95,18 @@ input,textarea {
 @second-color: #f9503b;
 
 @font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(../fonts/lato-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(../fonts/lato-bold.woff) format('woff');
+}
+@font-face {
   font-family: 'icomoon';
   src:url('../fonts/icomoon.eot?5g7rs');
   src:url('../fonts/icomoon.eot?#iefix5g7rs') format('embedded-opentype'),
@@ -136,6 +148,40 @@ input,textarea {
 }
 .icon-dir::before {
   content: "\e605";
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
 }
 /* header and content */
 #wrap-content {
@@ -349,17 +395,32 @@ footer {
       color: @mian-color;
       margin: 80px auto 35px;
       text-align: center;
-      a:first-child {
-        -moz-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg);
+      .more {
+        display: inline-block;
+        margin: 0 10px;
+        a {
+          cursor: pointer;
+          font-size: 35px;
+          position: relative;
+          &:hover {
+            color: @second-color;
+          }
+          span {
+            display: inline-block;
+            &.spin {
+              -webkit-animation: spin 2s infinite linear;
+              -moz-animation: spin 2s infinite linear;
+              -o-animation: spin 2s infinite linear;
+              animation: spin 2s infinite linear;
+            }
+          }
+
+        }
       }
-      & > span,
-      a:first-child {
+      & > span{
+        display: inline-block;
         cursor: pointer;
         font-size: 35px;
-        display: inline-block;
         margin: 0 10px;
         position: relative;
         &.icon-up{
@@ -368,7 +429,6 @@ footer {
           -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
         }
-
         &.to-left {
           -moz-transform: rotateY(180deg);
           -o-transform: rotateY(180deg);
