@@ -17,8 +17,7 @@ get_header(); ?>
             <div class="post-detail">
                 <?php the_content(); ?>
                 <div class="copyright">
-                    <p>Transshipment is forbidden</p>
-                    <p>本站文章禁止转载</p>
+                    <p>Contents licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">cc-by-4.0</a></p>
                 </div>
             </div>
             <div class="single-tags">
