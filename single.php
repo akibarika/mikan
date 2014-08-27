@@ -24,7 +24,7 @@ get_header(); ?>
             <div class="single-tags">
                 <?php the_tags(' ',' '); ?>
             </div>
-
+            <?php comments_template(); ?>
         </article>
         <?php endwhile; ?>
     </div>

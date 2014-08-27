@@ -19,6 +19,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.history.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/nprogress.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/comments-ajax.js"></script>
 
 </body>
 
