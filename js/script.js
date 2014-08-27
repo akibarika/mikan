@@ -2,7 +2,7 @@
  * Created by Akiba on 14-8-22.
  */
 $(document).ready(function(){
-    jQuery(document).on("click",".icon-up",function(){
+    jQuery(document).on("click",".icon-arrow-up",function(){
         $('html, body').animate({scrollTop: 0}, 500);
     });
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
         turnpage(currentLink);
         currentState = window.location.href;
     });
-    jQuery(document).on('click', '.ajax-link, .post-date a, .single-tags a', function(event) {
+    jQuery(document).on('click', '.ajax-link, .post-date a, .single-tags a, .single-nav a, nav ul li a', function(event) {
         event.preventDefault();
         if (loading === false) {
             var currentState = History.getState();
