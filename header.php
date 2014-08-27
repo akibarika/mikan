@@ -33,11 +33,7 @@
                     <a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><span class="icon-feed"></span></a>
                 </div>
                 <nav>
-                    <ul>
-                        <li><a>目录一</a></li>
-                        <li><a>目录二</a></li>
-                        <li><a>目录三</a></li>
-                    </ul>
+                    <?php  wp_nav_menu( array( 'theme_location' => 'menu' ,'container'=>'')); ?>
                 </nav>
                 <div class="sub"><?php bloginfo('description'); ?></div>
             </div>

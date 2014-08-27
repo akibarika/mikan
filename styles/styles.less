@@ -106,6 +106,7 @@ input,textarea {
 @mian-color: #f97f46;
 @second-color: #f9503b;
 
+/* font section */
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -248,6 +249,11 @@ input,textarea {
             font-weight: 500;
             font-size: 19px;
             margin: 0 10px;
+            a {
+              &:hover {
+                color: @second-color;
+              }
+            }
           }
         }
       }
@@ -259,6 +265,7 @@ input,textarea {
       }
     }
   }
+  /* content section */
   section.content {
     height: auto;
     overflow: hidden;
@@ -449,6 +456,7 @@ input,textarea {
     }
   }
 }
+/* footer section */
 footer {
   border-bottom: 5px solid @mian-color;
   height: auto;
@@ -512,6 +520,7 @@ footer {
     }
   }
 }
+/* media query */
 @media only screen and (max-width: 959px) and (min-width: 768px) {
   #wrap-content {
     section.content {
