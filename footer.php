@@ -1,14 +1,13 @@
-<footer id="footer">
+<footer id="footer" class="cf">
     <div class="container">
         <div class="wrap-footer">
             <?php if ( is_single() ){ ?>
-            <span class="icon-dir to-left"></span>
-            <span class="icon-up"></span>
-            <span class="icon-dir to-right"></span>
+            <span class="icon-arrow-up"></span>
             <?php } else { ?>
-             <div class="more">
-            <?php echo get_next_posts_link('<span title="显示更多" class="icon-refresh"></span>'); ?></div>
-            <span class="icon-up"></span>
+            <div class="more">
+                <?php echo get_next_posts_link('<span title="显示更多" class="icon-refresh"></span>'); ?>
+            </div>
+            <span class="icon-arrow-up"></span>
             <?php } ?>
             <p class="cp">Made with <span class="heart"><3</span> in Theme <span class="mikan">Mikan</span></p>
         </div>
