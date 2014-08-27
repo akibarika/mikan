@@ -512,3 +512,75 @@ footer {
     }
   }
 }
+@media only screen and (max-width: 959px) and (min-width: 768px) {
+  #wrap-content {
+    section.content {
+      .wrap-post {
+        .post-content {
+          margin: 0 20px;
+          .post-detail {
+            img {
+              max-width: 600px;
+              height: auto;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  #wrap-content {
+    section.content {
+      .wrap-post {
+        .post-content {
+          margin: 0 10px;
+          .post-heading {
+            & > h1 {
+              font-size: 45px;
+            }
+          }
+          .post-detail {
+            img {
+              max-width: 400px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #wrap-content {
+    section.content {
+      .wrap-post {
+        .post-list {
+          .post-item {
+            a {
+              time {
+                display: none;
+              }
+            }
+          }
+        }
+        .post-content {
+          margin: 0 10px;
+          .post-heading {
+            & > h1 {
+              font-size: 30px;
+            }
+          }
+          .post-detail {
+            img {
+              max-width: 260px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
