@@ -14,10 +14,10 @@
     </div>
 </footer>
 <!-- js files-->
-<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js?ver=1.11.1"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.history.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/nprogress.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/script.js?ver=1.0"></script>
 
 </body>
 

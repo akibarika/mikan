@@ -71,7 +71,7 @@ $(document).ready(function(){
         turnpage(currentLink);
         currentState = window.location.href;
     });
-    jQuery(document).on('click', '.ajax-link, .post-date a, .single-tags a, .single-nav a', function(event) {
+    jQuery(document).on('click', '.ajax-link, .post-date a, .single-tags a, .single-nav a, nav ul li a', function(event) {
         event.preventDefault();
         if (loading === false) {
             var currentState = History.getState();
