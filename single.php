@@ -30,7 +30,7 @@ get_header(); ?>
                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;"><span class="icon-facebook"></span></a>
                 <a href="https://plus.google.com/share?url=<?php the_permalink() ?>" onclick="window.open(this.href, 'google-plus-share', 'width=550,height=235');return false;"><span class="icon-googleplus"></span></a>
             </div>
-            <div class="single-nav">
+            <div class="single-nav cf">
                 <?php previous_post_link('%link','<span title="上一篇" class="icon-arrow-left"></span>'); ?>
 
                 <?php next_post_link('%link','<span title="下一篇" class="icon-arrow-right"></span>'); ?>
