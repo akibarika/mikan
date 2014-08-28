@@ -13,7 +13,8 @@ $(document).ready(function(){
     var $content = $('.content');
     var $postIndex = $('.post-list');
     var $navList = $('.wrap-footer');
-
+    var $comContent = $('.commentlist');
+    var $comNav = $('#comments .navigation');
     if ( ! History.enabled) {
         return false;
     }
@@ -45,7 +46,15 @@ $(document).ready(function(){
         });
     });
 
-    function turnpage(pageurl){
+    var currentState = window.location.href;
+    window.addEventListener('popstate',function(event){
+        var _currentUrl = window.location.href;
+        if(currentState != _currentUrl){
+            turnpage(_currentUrl);
+            currentState = _currentUrl;
+        }
+    });
+    function turnpage(pageurl) {
         $postIndex.addClass('fading');
         $('.icon-refresh').addClass('spin');
         $.ajax({
@@ -64,6 +73,22 @@ $(document).ready(function(){
 
         });
     }
+    function turnnavpage(url) {
+        $.ajax({
+            url: url
+        }).done(function(data){
+            var $comContent = $('.commentlist');
+            var $comNav = $('#comments .navigation');
+            var $html = $(data);
+            var $result = $('.commentlist',$html).contents();
+            var $nextlink = $('#comments .navigation',$html).contents();
+            $comContent.html($result);
+            $comNav.html($nextlink);
+            $('html, body').animate({scrollTop: $('.commentlist').offset().top - 65},500);
+            NProgress.done();
+        });
+    }
+    /* page navigation ajax */
     jQuery(document).on("click",".wrap-footer a:first",function(event){
         event.preventDefault();
         var currentLink = $(this).attr("href");
@@ -71,6 +96,7 @@ $(document).ready(function(){
         turnpage(currentLink);
         currentState = window.location.href;
     });
+    /* main ajax */
     jQuery(document).on('click', '.ajax-link, .post-date a, .single-tags a, .single-nav a, nav ul li a', function(event) {
         event.preventDefault();
         if (loading === false) {
@@ -85,4 +111,13 @@ $(document).ready(function(){
             }
         }
     });
+    /* comment navigation ajax */
+    jQuery(document).on('click', '#comments .navigation a', function(event) {
+        event.preventDefault();
+        var currentLink = $(this).attr("href");
+        NProgress.start();
+        turnnavpage(currentLink);
+        currentState = window.location.href;
+    });
+
 })

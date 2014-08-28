@@ -10,6 +10,17 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Rika Akiba">
+    <?php if( is_single() || is_page() ) {
+        if( function_exists('get_query_var') ) {
+            $cpage = intval(get_query_var('cpage'));
+            $commentPage = intval(get_query_var('comment-page'));
+        }
+        if( !empty($cpage) || !empty($commentPage) ) {
+            echo '<meta name="robots" content="noindex, nofollow" />';
+            echo "\n";
+        }
+    }
+    ?>
     <!-- style file -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/styles/nprogress.css">
@@ -30,7 +41,7 @@
             <div class="container">
                 <div class="wrap-title">
                     <a class="ajax-link" href="<?php $url = home_url('/'); echo $url; ?>">MIKAN</a>
-                    <a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><span class="icon-feed"></span></a>
+<!--                    <a href="--><?php //bloginfo('rss2_url'); ?><!--" target="_blank"><span class="icon-feed"></span></a>-->
                 </div>
                 <nav>
                     <?php  wp_nav_menu( array( 'theme_location' => 'menu' ,'container'=>'')); ?>

@@ -16,13 +16,13 @@ if ( post_password_required() ) : ?>
             </ol>
             <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                 <div class="navigation">
-                    <div class="cf"><?php paginate_comments_links(); ?></div>
+                    <div class="cf"><?php paginate_comments_links( array('prev_text' => '&laquo;', 'next_text' => '&raquo;') ); ?></div>
                 </div>
             <?php endif; ?>
         <?php endif; ?>
         <?php if ('open' == $post->comment_status) : ?>
             <div id="respond">
-                <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+                <form id="commentform" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" >
                 <?php if ( $user_ID ) : ?>
                     <div class="comtool cf">
                         <?php
@@ -35,12 +35,12 @@ if ( post_password_required() ) : ?>
                     <div id="author_info" class="author_info cf" >
                         <div class="user_logged cf">
                             <span>欢迎回来</span> <?php	printf(__(' <a href="%1$s">%2$s</a> '), get_option('siteurl') . '/wp-admin/profile.php', $user_identity); ?>
-                            <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account'); ?>" class="user_logout"><?php _e('Log out'); ?></a>
+                            <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account'); ?>" class="user_logout"><?php _e('不是你吗？'); ?></a>
                         </div>
                     </div>
                     </div>
                     <textarea name="comment" id="comment" rows="10" cols="100%" tabindex="4" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
-                    <input type="submit" name="submit" id="submit" value="吐槽！" tabindex="5" >
+                    <input type="submit" name="submit" id="submit" value="POST COMMENT" tabindex="5" >
                     <?php comment_id_fields(); ?>
                     <?php do_action('comment_form', $post->ID); ?>
                     <input type="hidden" id="name_key" name="name_key" value="<?php echo wp_create_nonce(get_the_ID());  ?>">

@@ -2,12 +2,12 @@
     <div class="container">
         <div class="wrap-footer">
             <?php if ( is_single() ){ ?>
-                <span class="icon-arrow-up"></span>
+                <span class="icon-arrow-up" title="往上"></span>
             <?php } else { ?>
                 <div class="more">
                     <?php echo get_next_posts_link('<span title="显示更多" class="icon-refresh"></span>'); ?>
                 </div>
-                <span class="icon-arrow-up"></span>
+                <span class="icon-arrow-up" title="往上"></span>
             <?php } ?>
             <p class="cp">Made with <span class="heart"><3</span> in Theme <span class="mikan">Mikan</span></p>
         </div>

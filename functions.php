@@ -22,7 +22,7 @@ function mytheme_comment($comment, $args, $depth) {
     }
 
     ?>
-    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" <?php if( $depth > 1){ echo 'style="margin-left:35px;"';} ?>>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" <?php if( $depth > 1){ echo 'style="margin-left:65px;"';} ?>>
         <div id="comment-<?php comment_ID(); ?>" class="comment-body cf">
             <div class="comment-author">
                 <?php echo get_avatar( $comment, $size = '60'); ?>
