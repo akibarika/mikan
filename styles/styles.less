@@ -377,10 +377,23 @@ input,textarea {
             li {
               margin: 0 0 10px;
             }
+            & > ul,
+            & > ol {
+              margin: 10px 0 0 20px;
+            }
+          }
+          h1,h2,h3,h4,h5,h6 {
+            margin: 10px 0;
+          }
+          hr {
+            background-color: @mian-color;
+            height: 1px;
+            margin: 10px 5px;
           }
           .copyright {
             color: #aeadad;
             font-weight: bold;
+            margin: 20px 0 0 0;
             text-align: right;
             &::before {
               content: "";
@@ -471,7 +484,7 @@ input,textarea {
                     display: block;
                   }
                   .comment-reply {
-                    border-radius: 100%;
+                    border-radius: 50%;
                     height: 100%;
                     left: 0;
                     position: absolute;
@@ -479,7 +492,7 @@ input,textarea {
                     width: 100%;
                     a {
                       background-color: @mian-color;
-                      border-radius: 100%;
+                      border-radius: 50%;
                       color: #fff;
                       display: block;
                       font-weight: normal;
