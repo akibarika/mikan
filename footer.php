@@ -18,8 +18,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.history.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/nprogress.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/script.js?ver=1.0"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/comments-ajax.js"></script>
-
+<?php wp_footer(); ?>
 </body>
 
 </html>

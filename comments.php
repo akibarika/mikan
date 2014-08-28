@@ -25,11 +25,7 @@ if ( post_password_required() ) : ?>
                 <form id="commentform" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" >
                 <?php if ( $user_ID ) : ?>
                     <div class="comtool cf">
-                        <?php
-                            if ( is_singular() )
-                                    wp_enqueue_script( "comment-reply" );
-                            cancel_comment_reply_link('取消回复')
-                        ?>
+                        <?php cancel_comment_reply_link('取消回复') ?>
                     </div>
                     <div class="commenter">
                     <div id="author_info" class="author_info cf" >
@@ -46,11 +42,7 @@ if ( post_password_required() ) : ?>
                     <input type="hidden" id="name_key" name="name_key" value="<?php echo wp_create_nonce(get_the_ID());  ?>">
                     <?php else :?>
                         <div class="cancel_comment_reply">
-                            <?php
-                                if ( is_singular() )
-                                    wp_enqueue_script( "comment-reply" );
-                                cancel_comment_reply_link('取消回复')
-                            ?>
+                            <?php cancel_comment_reply_link('取消回复') ?>
                         </div>
                         <div class="commenter">
                             <div id="author_info" class="author_info cf">
