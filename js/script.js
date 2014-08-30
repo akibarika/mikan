@@ -15,6 +15,7 @@ $(document).ready(function(){
     var $navList = $('.wrap-footer');
     var $comContent = $('.commentlist');
     var $comNav = $('#comments .navigation');
+    var $headNav = $('#menu-main');
     if ( ! History.enabled) {
         return false;
     }
@@ -28,6 +29,7 @@ $(document).ready(function(){
             var $html = $(data);
             var $newContent = $('.content', $html).contents();
             var $newNav = $('.wrap-footer', $html).contents();
+            var $newHead = $('#menu-main', $html).contents();
             document.title = $html.filter('title').text();
             $('html, body').animate({'scrollTop': 0});
             $content.fadeOut(500, function() {
@@ -35,6 +37,8 @@ $(document).ready(function(){
                 $content.html($newContent);
                 $content.fadeIn(500);
             });
+            $headNav.show();
+            $headNav.html($newHead);
             $navList.fadeOut(500,function() {
                 $navList.show();
                 $navList.html($newNav);
@@ -119,7 +123,4 @@ $(document).ready(function(){
         turnnavpage(currentLink);
         currentState = window.location.href;
     });
-
-
-
 })

@@ -257,6 +257,12 @@ textarea {
   font-size: 19px;
   margin: 0 10px;
 }
+#wrap-content header .container nav ul > li.current-menu-item {
+  border-bottom: 1px dotted #f9503b;
+}
+#wrap-content header .container nav ul > li.current-menu-item a {
+  color: #f9503b;
+}
 #wrap-content header .container nav ul > li a:hover {
   color: #f9503b;
 }

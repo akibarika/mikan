@@ -46,9 +46,8 @@ function mytheme_comment($comment, $args, $depth) {
             </div>
         </div>
     </li>
-<?php } ?>
+<?php }
 
-<?php
 //载入jquery库
 //wp_enqueue_script( 'jquerylib', get_template_directory_uri() . '/js/jquery-1.10.2.min.js' , array(), '1.10.2', false);
 wp_enqueue_script( 'base', get_template_directory_uri() . '/js/comment-ajax.js', array(), '1.00', true);
@@ -160,14 +159,7 @@ while($tmp_c->comment_parent != 0){
     $comment_depth++;
     $tmp_c = get_comment($tmp_c->comment_parent);
 }
-
 $GLOBALS['comment'] = $comment;
-global $commentcount;
-if(!$commentcount) {
-    $page = ( !empty($in_comment_loop) ) ? get_query_var('cpage')-1 : get_page_of_comment( $comment->comment_ID, $args )-1;
-    $cpp=get_option('comments_per_page');
-    $commentcount = $cpp * $page;
-}
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" <?php if( $depth > 1){ echo 'style="margin-left:65px;"';} ?>>
     <div id="comment-<?php comment_ID(); ?>" class="comment-body cf">

@@ -249,6 +249,12 @@ input,textarea {
             font-weight: 500;
             font-size: 19px;
             margin: 0 10px;
+            &.current-menu-item {
+              border-bottom: 1px dotted @second-color;
+              a {
+                color: @second-color;
+              }
+            }
             a {
               &:hover {
                 color: @second-color;
